@@ -4,7 +4,8 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     printf("Please enter a character:\n");
     printf("getchar() != EOF: %d\n", (getchar() != EOF));
     return 0;
