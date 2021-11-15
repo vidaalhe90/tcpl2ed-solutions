@@ -18,13 +18,13 @@ int main(void)
     {
         if (c != ' ' && c != '\t' && c != '\n')
         {
-            putchar(c);
+            printf("%c", c);
             state = IN_WORD;
         }
         else if (state == IN_WORD)
         {
             if (c == '\t') { c = ' '; }
-            putchar(c);
+            printf("%c", c);
             state = OUT_WORD;
         }
     }
