@@ -20,9 +20,8 @@ int main(void)
     {
         if (c >= ' ' && c <= '~') { frequencies[c - ' '] += 1; }
     }
-
-    // Print histogram.
-    // Print histograms of lenghts.
+    
+    // Print histograms of frequencies.
     printf("\n==== Histogram of frequencies (c) of characters ====\n");
     printf("-------------------------------------------------------\n");
     printf("  c  |                      count                      \n");
