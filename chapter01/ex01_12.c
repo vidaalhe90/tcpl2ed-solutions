@@ -17,12 +17,12 @@ int main(void)
     {
         if (c != ' ' && c != '\t' && c != '\n')
         {
-            putchar(c);
+            printf("%c", c);
             state = IN_WORD;
         }
         else if (state == IN_WORD)
         {
-            putchar('\n');
+            printf("\n");
             state = OUT_WORD;
         }
     }
