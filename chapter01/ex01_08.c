@@ -9,16 +9,15 @@ int main(void)
     int c;
     int nb, nt, nl;
 
-    // Count blanks, tabs and newlines entered.
+    /* Count blanks, tabs, and newlines. */
     nb = nt = nl = 0;
-    while ((c = getchar()) != EOF)
-    {
+    while ((c = getchar()) != EOF) {
         if (c == ' ')  { nb++; }
         if (c == '\t') { nt++; }
         if (c == '\n') { nl++; }
     }
 
-    // Print results.
+    /* Print results. */
     printf("blanks: %d\n", nb);
     printf("tabs:   %d\n", nt);
     printf("lines:  %d\n", nl);
