@@ -6,26 +6,23 @@
 
 #include <stdio.h>
 
-#define IN_WORD 1
 #define OUT_WORD 0
+#define IN_WORD 1
 
-int main(void)
-{
-    int c, state;
-    
-    state = OUT_WORD;
-    while ((c = getchar()) != EOF)
-    {
-        if (c != ' ' && c != '\t' && c != '\n')
-        {
-            printf("%c", c);
-            state = IN_WORD;
-        }
-        else if (state == IN_WORD)
-        {
-            if (c == '\t') { c = ' '; }
-            printf("%c", c);
-            state = OUT_WORD;
+int main(void) {
+    int c, status;
+
+    status = OUT_WORD;
+    while ((c = getchar()) != EOF) {
+        if (c != ' ' && c != '\t' && c != '\n') {
+            putchar(c);
+            status = IN_WORD;
+        } else if (status == IN_WORD) {
+            if (c == '\t') {
+                c = ' ';
+            }
+            putchar(c);
+            status = 0;
         }
     }
 
