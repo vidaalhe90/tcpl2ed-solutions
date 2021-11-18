@@ -8,46 +8,43 @@
 
 #define IN_WORD 1
 #define OUT_WORD 0
-#define MAX_WORD_LENGTH 100
+#define MAX_LENGTH 100
 
-int main(void)
-{
+int main(void) {
     int i, j;
-    int c, state;
-    int lenghts[MAX_WORD_LENGTH + 1];
+    int c, status;
+    int lenghts[MAX_LENGTH + 1];
 
-    // Intialize lenghts array.
-    for (i = 0; i <= MAX_WORD_LENGTH; i++) { lenghts[i] = 0; }
+    /* Initialize lengths array. */
+    for (i = 0; i <= MAX_LENGTH; i++) {
+        lenghts[i] = 0;
+    }
 
-    // Compute lenghts of entered words.
+    /* Compute lenghts of entered words. */
     i = 0;
-    state = OUT_WORD;
-    while ((c = getchar()) != EOF)
-    {
-        if (c != ' ' && c != '\t' && c != '\n')
-        {
+    status = OUT_WORD;
+    while ((c = getchar()) != EOF) {
+        if (c != ' ' && c != '\t' && c != '\n') {
             i++;
-            state = IN_WORD;
-        }
-        else if (state == IN_WORD)
-        {
-            lenghts[i] += 1;
+            status = IN_WORD;
+        } else if (status == IN_WORD) {
+            lenghts[i]++;
             i = 0;
-            state = OUT_WORD;
+            status = OUT_WORD;
         }
     }
 
-    // Print histograms of lenghts.
+    /* Print histogram of lengths. */
     printf("\n==== Histogram of the length (n) of words ====\n");
     printf("----------------------------------------------\n");
     printf("  n  |                    count               \n");
     printf("----------------------------------------------\n");
-    for (i = 1; i <= MAX_WORD_LENGTH; i++)
-    {
-        if (lenghts[i] != 0)
-        {
+    for (i = 1; i <= MAX_LENGTH; i++) {
+        if (lenghts[i] != 0) {
             printf("%4d |", i);
-            for (j = 1; j <= lenghts[i]; j++) { printf("*"); }
+            for (j = 1; j <= lenghts[i]; j++) {
+                printf("*");
+            }
             printf("\n");
         }
     }
