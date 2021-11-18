@@ -7,31 +7,33 @@
 
 #define NUM_PRINTABLE_CHARS '~' - ' ' + 1
 
-int main(void)
-{
+int main(void) {
     int i, j, c;
     int frequencies[NUM_PRINTABLE_CHARS];
 
-    // Initialize frequencies array.
-    for (i = 0; i < NUM_PRINTABLE_CHARS; i++) { frequencies[i] = 0; }
-
-    // Compute frequencies for each printable character entered.
-    while ((c = getchar()) != EOF)
-    {
-        if (c >= ' ' && c <= '~') { frequencies[c - ' '] += 1; }
+    /* Initialize frequencies array. */
+    for (i = 0; i < NUM_PRINTABLE_CHARS; i++) {
+        frequencies[i] = 0;
     }
-    
-    // Print histograms of frequencies.
+
+    /* Compute frequencies for each entered printable char. */
+    while ((c = getchar()) != EOF) {
+        if (c >= ' ' && c <= '~') {
+            frequencies[c - ' ']++;
+        }
+    }
+
+    /* Print histogram of frequencies. */
     printf("\n==== Histogram of frequencies (c) of characters ====\n");
     printf("-------------------------------------------------------\n");
     printf("  c  |                      count                      \n");
     printf("-------------------------------------------------------\n");
-    for (i = 0; i < NUM_PRINTABLE_CHARS; i++)
-    {
-        if (frequencies[i] != 0)
-        {
+    for (i = 0; i < NUM_PRINTABLE_CHARS; i++) {
+        if (frequencies[i] != 0) {
             printf("  %c  |", (i + ' '));
-            for (j = 1; j <= frequencies[i]; j++) { printf("*"); }
+            for (j = 1; j <= frequencies[i]; j++) {
+                printf("*");
+            }
             printf("\n");
         }
     }
