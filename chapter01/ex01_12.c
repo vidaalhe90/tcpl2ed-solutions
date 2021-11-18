@@ -8,25 +8,20 @@
 #define IN_WORD 1
 #define OUT_WORD 0
 
-int main(void)
-{
-    int c, state;
+int main(void) {
+    int c, status;
 
-    state = OUT_WORD;
-    while ((c = getchar()) != EOF)
-    {
-        if (c != ' ' && c != '\t' && c != '\n')
-        {
-            printf("%c", c);
-            state = IN_WORD;
-        }
-        else if (state == IN_WORD)
-        {
-            printf("\n");
-            state = OUT_WORD;
+    status = OUT_WORD;
+    while ((c = getchar()) != EOF) {
+        if (c != ' ' && c != '\t' && c != '\n') {
+            putchar(c);
+            status = IN_WORD;
+        } else if (status == IN_WORD) {
+            putchar('\n');
+            status = OUT_WORD;
         }
     }
-
+    
     return 0;
 }
 
