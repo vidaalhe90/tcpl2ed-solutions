@@ -18,8 +18,7 @@ int main(void)
     float fahr, celsius;
 
     // Compute celsiys for fahr = 0, 20, ..., 300.
-    for (fahr = LOWER; fahr <= UPPER; fahr += STEP)
-    {
+    for (fahr = LOWER; fahr <= UPPER; fahr += STEP) {
         celsius = toCelsius(fahr);
         printf("%3.0f %6.1f\n", fahr, celsius);
     }

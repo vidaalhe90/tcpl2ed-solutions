@@ -11,13 +11,18 @@ int main(void)
 
     // Count blanks, tabs, and newlines.
     nb = nt = nl = 0;
-    while ((c = getchar()) != EOF)
-    {
-        if (c == ' ')  nb++;
-        if (c == '\t') nt++;
-        if (c == '\n') nl++;
+    while ((c = getchar()) != EOF) {
+        if (c == ' ') {
+            nb++;
+        }
+        if (c == '\t') {
+            nt++;
+        }
+        if (c == '\n') {
+            nl++;
+        }
     }
-
+    
     // Print results.
     printf("blanks: %d\n", nb);
     printf("tabs:   %d\n", nt);
