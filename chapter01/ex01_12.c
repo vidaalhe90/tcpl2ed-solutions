@@ -14,8 +14,7 @@ int main(void)
     status = OUT_WORD;
     while ((c = getchar()) != EOF)
     {
-        if (c != ' ' && c != '\t' && c != '\n')
-        {
+        if (c != ' ' && c != '\t' && c != '\n') {
             putchar(c);
             status = IN_WORD;
         }
@@ -25,6 +24,6 @@ int main(void)
             status = OUT_WORD;
         }
     }
-
+    
     return 0;
 }

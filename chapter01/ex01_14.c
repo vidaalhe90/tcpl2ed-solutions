@@ -16,7 +16,7 @@ int main(void)
     for (i = 0; i < NUM_PRINTABLE_CHARS; i++) frequencies[i] = 0;
 
     // Compute frequencies for each entered printable char.
-    while ((c = getchar()) != EOF) if (c >= ' ' && c <= '~') frequencies[c - ' ']++;
+    while ((c = getchar()) != EOF) { if (c >= ' ' && c <= '~') { frequencies[c - ' ']++; } }
 
     // Print histogram of frequencies.
     printf("\n==== Histogram of frequencies (c) of characters ====\n");
@@ -28,7 +28,7 @@ int main(void)
         if (frequencies[i] != 0)
         {
             printf("  %c  |", (i + ' '));
-            for (j = 1; j <= frequencies[i]; j++) printf("*");
+            for (j = 1; j <= frequencies[i]; j++) { printf("*"); }
             printf("\n");
         }
     }
