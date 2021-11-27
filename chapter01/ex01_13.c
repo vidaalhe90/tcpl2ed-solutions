@@ -47,7 +47,7 @@ int main(void)
         if (lenghts[i] != 0)
         {
             printf("%4d |", i);
-            for (j = 1; j <= lenghts[i]; j++) { printf("*"); }
+            for (j = 1; j <= lenghts[i]; j++) printf("*");
             printf("\n");
         }
     }

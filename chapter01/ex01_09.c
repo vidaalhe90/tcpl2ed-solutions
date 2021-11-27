@@ -23,7 +23,7 @@ int main(void)
         }
         else if (status == IN_WORD)
         {
-            if (c == '\t') { c = ' '; }
+            if (c == '\t') c = ' ';
             putchar(c);
             status = 0;
         }
