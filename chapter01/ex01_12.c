@@ -12,11 +12,15 @@ int main(void)
     int c, status;
 
     status = OUT_WORD;
-    while ((c = getchar()) != EOF) {
-        if (c != ' ' && c != '\t' && c != '\n') {
+    while ((c = getchar()) != EOF)
+    {
+        if (c != ' ' && c != '\t' && c != '\n')
+        {
             putchar(c);
             status = IN_WORD;
-        } else if (status == IN_WORD) {
+        }
+        else if (status == IN_WORD)
+        {
             putchar('\n');
             status = OUT_WORD;
         }

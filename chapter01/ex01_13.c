@@ -17,18 +17,20 @@ int main(void)
     int lenghts[MAX_LENGTH + 1];
 
     // Initialize lengths array.
-    for (i = 0; i <= MAX_LENGTH; i++) {
-        lenghts[i] = 0;
-    }
+    for (i = 0; i <= MAX_LENGTH; i++) { lenghts[i] = 0; }
 
     // Compute lengths of entered words.
     i = 0;
     status = OUT_WORD;
-    while ((c = getchar()) != EOF) {
-        if (c != ' ' && c != '\t' && c != '\n') {
+    while ((c = getchar()) != EOF)
+    {
+        if (c != ' ' && c != '\t' && c != '\n')
+        {
             i++;
             status = IN_WORD;
-        } else if (status == IN_WORD) {
+        }
+        else if (status == IN_WORD)
+        {
             lenghts[i]++;
             i = 0;
             status = OUT_WORD;
@@ -40,12 +42,12 @@ int main(void)
     printf("----------------------------------------------\n");
     printf("  n  |                    count               \n");
     printf("----------------------------------------------\n");
-    for (i = 1; i <= MAX_LENGTH; i++) {
-        if (lenghts[i] != 0) {
+    for (i = 1; i <= MAX_LENGTH; i++)
+    {
+        if (lenghts[i] != 0)
+        {
             printf("%4d |", i);
-            for (j = 1; j <= lenghts[i]; j++) {
-                printf("*");
-            }
+            for (j = 1; j <= lenghts[i]; j++) { printf("*"); }
             printf("\n");
         }
     }
