@@ -17,7 +17,10 @@ int main(void)
     int lenghts[MAX_LENGTH + 1];
 
     // Initialize lengths array.
-    for (i = 0; i <= MAX_LENGTH; i++) { lenghts[i] = 0; }
+    for (i = 0; i <= MAX_LENGTH; i++)
+    {
+        lenghts[i] = 0;
+    }
 
     // Compute lengths of entered words.
     i = 0;
@@ -47,7 +50,10 @@ int main(void)
         if (lenghts[i] != 0)
         {
             printf("%4d |", i);
-            for (j = 1; j <= lenghts[i]; j++) { printf("*"); }
+            for (j = 1; j <= lenghts[i]; j++)
+            {
+                printf("*");
+            }
             printf("\n");
         }
     }
